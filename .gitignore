@@ -30,6 +30,11 @@ htmlcov/
 # Streamlit local secrets/cache
 .streamlit/secrets.toml
 
+# Node / Slidev
+node_modules/
+presentacion/dist/
+.slidev/
+
 # OS / IDE files
 .DS_Store
 Thumbs.db
