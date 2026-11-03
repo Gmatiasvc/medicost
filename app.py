@@ -1,11 +1,11 @@
 """
-Aplicación interactiva en Streamlit para el Grupo 02:
+Aplicación interactiva en Streamlit para el Grupo 09:
 Estimación de Gastos de Seguros Médicos (Medical Cost Personal Datasets).
 
 Implementa la arquitectura de 6 pantallas exigida en el Anexo H de ejercicio.md
 y design_doc.md, cubriendo las 16 etapas obligatorias (Anexo A / Anexo E),
 las 9 tablas estándar (T1 a T9, Anexo C) y los requisitos analíticos específicos
-del Grupo 02 (asimetría y atípicos de `charges`, comparación de MAE entre
+del Grupo 09 (asimetría y atípicos de `charges`, comparación de MAE entre
 fumadores y no fumadores por niveles de gasto, y advertencia explícita de no causalidad).
 """
 
@@ -65,7 +65,7 @@ from src.predict import (
 # CONFIGURACIÓN DE PÁGINA Y ESTILOS VISUALES
 # ============================================================================
 st.set_page_config(
-    page_title="Grupo 02 | Estimación de Gastos de Seguros Médicos",
+    page_title="Grupo 09 | Estimación de Gastos de Seguros Médicos",
     page_icon="🏥",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -169,11 +169,11 @@ def cached_five_new_predictions() -> pd.DataFrame:
 
 
 def render_header(df: pd.DataFrame, artifact: dict[str, Any]) -> None:
-    """Renderiza el encabezado institucional del Grupo 02."""
+    """Renderiza el encabezado institucional del Grupo 09."""
     st.markdown(
         """
         <div class="main-banner">
-            <h1>🏥 Grupo 02 — Estimación de Gastos de Seguros Médicos</h1>
+            <h1>🏥 Grupo 09 — Estimación de Gastos de Seguros Médicos</h1>
             <p>
                 Aprendizaje Supervisado (Regresión) sobre <b>Medical Cost Personal Datasets (insurance.csv)</b> ·
                 Pipeline reproducible sin Fuga de Datos (Data Leakage) · Métrica Primaria: <b>MAE (USD $)</b>
@@ -350,7 +350,7 @@ def render_screen_1_inicio(df: pd.DataFrame, artifact: dict[str, Any]) -> None:
                     "y serialización en models/modelo_final.joblib para predicciones nuevas."
                 ),
                 "Evidencia Verificable en la App": (
-                    "Pantallas 5 (Evaluación) y 6 (Predicciones): Tabla T8, análisis Grupo 02, formulario y Tabla T9."
+                    "Pantallas 5 (Evaluación) y 6 (Predicciones): Tabla T8, análisis Grupo 09, formulario y Tabla T9."
                 ),
             },
         ]
@@ -398,7 +398,7 @@ def render_screen_1_inicio(df: pd.DataFrame, artifact: dict[str, Any]) -> None:
     st.markdown(
         """
         <div class="causal-warning">
-            <b>⚠️ Advertencia Metodológica Obligatoria (Grupo 02): Uso Responsable, Límites Éticos y No Causalidad</b><br>
+            <b>⚠️ Advertencia Metodológica Obligatoria (Grupo 09): Uso Responsable, Límites Éticos y No Causalidad</b><br>
             1. <b>Asociación predictiva vs. Causalidad directa:</b> Este modelo aprende patrones estadísticos observacionales en datos históricos
             de facturación. Aunque <code>smoker = 'yes'</code> y <code>bmi >= 30</code> presentan la mayor asociación con incrementos en
             <code>charges</code>, <b>no debe interpretarse como una estimación de efecto causal directo</b> (no existe asignación aleatoria
@@ -414,7 +414,7 @@ def render_screen_1_inicio(df: pd.DataFrame, artifact: dict[str, Any]) -> None:
 
 
 # ============================================================================
-# PANTALLA 2: DATOS Y EDA (ETAPAS 3 Y 5 + REQUISITO GRUPO 02)
+# PANTALLA 2: DATOS Y EDA (ETAPAS 3 Y 5 + REQUISITO GRUPO 09)
 # ============================================================================
 def render_screen_2_eda(df: pd.DataFrame) -> pd.DataFrame:
     """Pantalla 2 (Anexo H): Fuente del dataset, T1, calidad T2, asimetría de charges y 5 gráficos EDA."""
@@ -542,12 +542,12 @@ def render_screen_2_eda(df: pd.DataFrame) -> pd.DataFrame:
 
     st.divider()
 
-    # --- REQUISITO ESPECÍFICO GRUPO 02: ASIMETRÍA Y VALORES ATÍPICOS DE CHARGES ---
-    st.subheader("📈 Requisito Específico Grupo 02: Análisis de Asimetría y Valores Atípicos de `charges`")
+    # --- REQUISITO ESPECÍFICO GRUPO 09: ASIMETRÍA Y VALORES ATÍPICOS DE CHARGES ---
+    st.subheader("📈 Requisito Específico Grupo 09: Análisis de Asimetría y Valores Atípicos de `charges`")
     st.markdown(
         """
         <div class="group02-box">
-            <b>Foco Analítico del Grupo 02 (Anexo B y Design Doc Sección 4):</b><br>
+            <b>Foco Analítico del Grupo 09 (Anexo B y Design Doc Sección 4):</b><br>
             La variable monetaria objetivo <code>charges</code> presenta una marcada <b>asimetría positiva (cola derecha)</b>.
             La media global (<b>$13,270.42</b>) supera en casi <b>$3,888 USD</b> a la mediana (<b>$9,382.03</b>) debido a una subpoblación
             de asegurados de alto costo. Bajo el criterio intercuartílico clásico ($Q_3 + 1.5 \\times \\text{IQR}$), existen
@@ -993,7 +993,7 @@ pipelines = {
 # PANTALLA 5: EVALUACIÓN, ANÁLISIS CRÍTICO Y CONCLUSIONES (ETAPAS 13, 14 Y 16)
 # ============================================================================
 def render_screen_5_evaluacion(artifact: dict[str, Any]) -> None:
-    """Pantalla 5 (Anexo H): Evaluación final única en test T8, análisis Grupo 02 fumadores vs no fumadores, Etapa 14 y Etapa 16."""
+    """Pantalla 5 (Anexo H): Evaluación final única en test T8, análisis Grupo 09 fumadores vs no fumadores, Etapa 14 y Etapa 16."""
     st.markdown(
         '<span class="stage-badge">Etapa 13: Evaluación final en test</span>'
         '<span class="stage-badge">Etapa 14: Análisis crítico y limitaciones</span>'
@@ -1001,7 +1001,7 @@ def render_screen_5_evaluacion(artifact: dict[str, Any]) -> None:
         '<span class="table-badge">Tabla T8: Prueba final</span>',
         unsafe_allow_html=True,
     )
-    st.header("5. Evaluación Final en Test Reservado, Análisis Grupo 02 y Conclusiones")
+    st.header("5. Evaluación Final en Test Reservado, Análisis Grupo 09 y Conclusiones")
 
     tm = artifact["test_metrics"]
     res_stats = artifact["residual_stats"]
@@ -1061,12 +1061,12 @@ def render_screen_5_evaluacion(artifact: dict[str, Any]) -> None:
 
     st.divider()
 
-    # --- REQUISITO ANALÍTICO ESPECÍFICO DEL GRUPO 02 ---
-    st.subheader("🔬 Requisito Analítico Grupo 02: Comparación del MAE entre Fumadores y No Fumadores y por Nivel de Gasto")
+    # --- REQUISITO ANALÍTICO ESPECÍFICO DEL GRUPO 09 ---
+    st.subheader("🔬 Requisito Analítico Grupo 09: Comparación del MAE entre Fumadores y No Fumadores y por Nivel de Gasto")
     st.markdown(
         """
         <div class="group02-box">
-            <b>Hallazgo Diferencial en Subgrupos (Grupo 02 — Anexo B y Sección 5):</b><br>
+            <b>Hallazgo Diferencial en Subgrupos (Grupo 09 — Anexo B y Sección 5):</b><br>
             Al desagregar el desempeño del modelo ganador (<code>SVR Optimizado</code>) en el conjunto de prueba según la condición
             de tabaquismo y el nivel de gasto real, se descubren dos comportamientos complementarios:<br>
             • <b>No Fumadores (<code>smoker = 'no'</code>, n = 214 en test):</b> Presentan un <b>MAE nominal menor ($1,363.24 USD)</b> y una
@@ -1098,7 +1098,7 @@ def render_screen_5_evaluacion(artifact: dict[str, Any]) -> None:
     st.markdown(
         """
         <div class="causal-warning">
-            <b>⚠️ Aclaración Metodológica Explícita sobre No Causalidad (Requisito Grupo 02):</b><br>
+            <b>⚠️ Aclaración Metodológica Explícita sobre No Causalidad (Requisito Grupo 09):</b><br>
             La diferencia observada en los gastos predichos y en el MAE entre fumadores y no fumadores refleja una
             <b>asociación estadística y actuarial en el conjunto de datos observacional</b>, pero <b>NO demuestra causalidad directa</b>
             por tres razones metodológicas:<br>
@@ -1489,7 +1489,7 @@ def main() -> None:
     artifact = cached_load_artifact()
 
     with st.sidebar:
-        st.markdown("## 🏥 Grupo 02 — MediCost ML")
+        st.markdown("## 🏥 Grupo 09 — MediCost ML")
         st.caption("Estimación de Gastos de Seguros Médicos (`insurance.csv`)")
         st.divider()
 
@@ -1515,7 +1515,7 @@ def main() -> None:
             - **2. Datos y EDA:** Etapas 3 y 5 · **T1, T2**
             - **3. Variables y preparación:** Etapas 4, 6 y 7 · **T3, T4**
             - **4. Modelos y comparación:** Etapas 8 a 12 · **T5, T6, T7**
-            - **5. Evaluación:** Etapas 13, 14 y 16 · **T8** + Grupo 02
+            - **5. Evaluación:** Etapas 13, 14 y 16 · **T8** + Grupo 09
             - **6. Predicciones:** Etapa 15 · **T9** + Simulador
             """
         )

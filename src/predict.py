@@ -1,6 +1,6 @@
 """
 Módulo de Inferencia y Predicción para Datos Nuevos (Etapa 15 - Tabla T9)
-Grupo 02: Estimación de Gastos de Seguros Médicos.
+Grupo 09: Estimación de Gastos de Seguros Médicos.
 
 Garantiza que las nuevas predicciones se ejecuten directamente sobre el
 Pipeline completo serializado en models/modelo_final.joblib (incluyendo

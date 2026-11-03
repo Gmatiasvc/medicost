@@ -1,6 +1,6 @@
 """
 Módulo de carga, validación, calidad de datos y análisis exploratorio (EDA)
-para el Grupo 02: Estimación de Gastos de Seguros Médicos (Medical Cost Personal Datasets).
+para el Grupo 09: Estimación de Gastos de Seguros Médicos (Medical Cost Personal Datasets).
 
 Cumple con las directrices de design_doc.md y ejercicio.md (Etapas 3, 4 y 5, y Tablas T1 y T2),
 garantizando que ninguna transformación de preprocesamiento se ajuste sobre el dataset completo
@@ -412,7 +412,7 @@ def split_features_target(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series]:
 def analyze_charges_asymmetry(df: pd.DataFrame) -> Dict[str, Any]:
     """
     Realiza el análisis especializado de asimetría, curtosis y valores extremos de 'charges'
-    y 'bmi', así como el desglose estadístico por hábito tabáquico exigido para el Grupo 02.
+    y 'bmi', así como el desglose estadístico por hábito tabáquico exigido para el Grupo 09.
 
     Parameters
     ----------

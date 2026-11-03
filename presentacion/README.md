@@ -1,4 +1,4 @@
-# Documentación, Informe Académico y Presentación (Grupo 02)
+# Documentación, Informe Académico y Presentación (Grupo 09)
 
 Esta carpeta contiene la documentación académica, técnica y la presentación en diapositivas desarrollada según los requerimientos de `ejercicio.md`.
 

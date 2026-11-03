@@ -8,7 +8,7 @@
 **Ciclo Académico:** 2026-II  
 
 **PROYECTO:** ESTIMACIÓN DE GASTOS DE SEGUROS MÉDICOS INDIVIDUALES MEDIANTE MODELOS SUPERVISADOS DE REGRESIÓN SIN FUGA DE INFORMACIÓN  
-**GRUPO DE TRABAJO:** Grupo 02  
+**GRUPO DE TRABAJO:** Grupo 09  
 **Integrantes:**  
 **Docente:** Mg. / Dr. Docente Titular del Curso  
 **Fecha de Entrega:** 1 de Noviembre de 2026  
@@ -17,7 +17,7 @@
 
 ## RESUMEN EJECUTIVO
 
-El presente trabajo desarrolla y evalúa un sistema predictivo supervisado de regresión para estimar los cargos médicos anuales individuales (`charges`) a partir del conjunto de datos *Medical Cost Personal Datasets* ($n = 1,338$), disponible públicamente en Kaggle. La problemática central aborda la incertidumbre financiera en la suscripción y cálculo de reservas técnicas para aseguradoras de salud en el instante inicial de contratación ($t = 0$). Se diseñó un protocolo metodológico estricto para mitigar el riesgo de fuga de información (*data leakage*): se efectuó una partición inicial 80/20 con semilla fija (`random_state = 42`), aislando un conjunto de prueba reservado ($n = 268$) evaluado una única vez al final del estudio. Dentro de una arquitectura de `Pipeline` y `ColumnTransformer`, se aplicó imputación robusta (`SimpleImputer`), escalado estándar (`StandardScaler`) y codificación *One-Hot* (`OneHotEncoder`) ajustados exclusivamente sobre los conjuntos de entrenamiento. Se compararon tres familias algorítmicas obligatorias (`LinearRegression`, `KNeighborsRegressor` y `SVR`) frente a una línea base ingenua (`DummyRegressor`). Mediante Validación Cruzada de 5 folds idénticos y optimización de hiperparámetros con `GridSearchCV`, el modelo `SVR (Optimizado)` con núcleo RBF ($C = 10,000$, $\gamma = \text{'scale'}$, $\epsilon = 1.0$) resultó ganador previo a la inspección de prueba con un $\text{MAE}_{\text{CV}} = \$2,014.67 \pm \$322.28$ y $R^2 = 0.8289$. En la prueba final reservada, el modelo ganador alcanzó un $\text{MAE} = \$1,803.44$ USD (reducción del $81.20\%$ respecto a la línea base de $\$9,593.34$), $\text{RMSE} = \$4,832.09$ y $R^2 = 0.8496$. El análisis específico del Grupo 02 evidenció que, si bien el error nominal es mayor en fumadores ($\text{MAE} = \$4,119.27$) que en no fumadores ($\text{MAE} = \$1,219.08$) debido a la escala monetaria media ($\$33,204.10$ vs. $\$7,862.09$), el error relativo es inferior en fumadores ($12.41\%$ vs. $15.51\%$) y el $R^2$ intra-grupo alcanza $0.6778$. Se enfatiza explícitamente que estas estimaciones corresponden a asociaciones observacionales y no a relaciones de causalidad médica directa. El sistema se encapsuló en una aplicación interactiva en Streamlit para inferencia reproducible.
+El presente trabajo desarrolla y evalúa un sistema predictivo supervisado de regresión para estimar los cargos médicos anuales individuales (`charges`) a partir del conjunto de datos *Medical Cost Personal Datasets* ($n = 1,338$), disponible públicamente en Kaggle. La problemática central aborda la incertidumbre financiera en la suscripción y cálculo de reservas técnicas para aseguradoras de salud en el instante inicial de contratación ($t = 0$). Se diseñó un protocolo metodológico estricto para mitigar el riesgo de fuga de información (*data leakage*): se efectuó una partición inicial 80/20 con semilla fija (`random_state = 42`), aislando un conjunto de prueba reservado ($n = 268$) evaluado una única vez al final del estudio. Dentro de una arquitectura de `Pipeline` y `ColumnTransformer`, se aplicó imputación robusta (`SimpleImputer`), escalado estándar (`StandardScaler`) y codificación *One-Hot* (`OneHotEncoder`) ajustados exclusivamente sobre los conjuntos de entrenamiento. Se compararon tres familias algorítmicas obligatorias (`LinearRegression`, `KNeighborsRegressor` y `SVR`) frente a una línea base ingenua (`DummyRegressor`). Mediante Validación Cruzada de 5 folds idénticos y optimización de hiperparámetros con `GridSearchCV`, el modelo `SVR (Optimizado)` con núcleo RBF ($C = 10,000$, $\gamma = \text{'scale'}$, $\epsilon = 1.0$) resultó ganador previo a la inspección de prueba con un $\text{MAE}_{\text{CV}} = \$2,014.67 \pm \$322.28$ y $R^2 = 0.8289$. En la prueba final reservada, el modelo ganador alcanzó un $\text{MAE} = \$1,803.44$ USD (reducción del $81.20\%$ respecto a la línea base de $\$9,593.34$), $\text{RMSE} = \$4,832.09$ y $R^2 = 0.8496$. El análisis específico del Grupo 09 evidenció que, si bien el error nominal es mayor en fumadores ($\text{MAE} = \$4,119.27$) que en no fumadores ($\text{MAE} = \$1,219.08$) debido a la escala monetaria media ($\$33,204.10$ vs. $\$7,862.09$), el error relativo es inferior en fumadores ($12.41\%$ vs. $15.51\%$) y el $R^2$ intra-grupo alcanza $0.6778$. Se enfatiza explícitamente que estas estimaciones corresponden a asociaciones observacionales y no a relaciones de causalidad médica directa. El sistema se encapsuló en una aplicación interactiva en Streamlit para inferencia reproducible.
 
 **Palabras clave:** Aprendizaje supervisado, Regresión, Soporte de Vectores para Regresión (SVR), Prevención de Data Leakage, Validación Cruzada, Streamlit.
 
@@ -233,10 +233,10 @@ El esquema de validación cruzada consistió en **5 folds idénticos** (`KFold(n
 
 ---
 
-## 5. DISCUSIÓN CRÍTICA Y REQUISITOS ESPECÍFICOS DEL GRUPO 02
+## 5. DISCUSIÓN CRÍTICA Y REQUISITOS ESPECÍFICOS DEL GRUPO 09
 
 ### 5.1 Requisito Específico: Comparativa MAE Fumadores vs. No Fumadores
-En cumplimiento de las directrices metodológicas del Grupo 02, se realizó una auditoría profunda de los residuales estratificados por la condición `smoker` en el conjunto de prueba reservado ($n = 268$):
+En cumplimiento de las directrices metodológicas del Grupo 09, se realizó una auditoría profunda de los residuales estratificados por la condición `smoker` en el conjunto de prueba reservado ($n = 268$):
 
 | Subgrupo | Pólizas en Test ($n$) | Proporción (%) | Gasto Real Promedio ($) | MAE en Test ($) | Mediana Error Abs. ($) | RMSE en Test ($) | MAE Relativo (%) | $R^2$ Intra-Grupo | Sesgo Medio ($) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |

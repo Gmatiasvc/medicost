@@ -1,6 +1,6 @@
-# 🏥 Grupo 02 — Estimación de Gastos de Seguros Médicos (`insurance.csv`)
+# 🏥 Grupo 09 — Estimación de Gastos de Seguros Médicos (`insurance.csv`)
 
-Aplicación interactiva en **Streamlit** y proyecto integral de **Aprendizaje Supervisado (Regresión)** desarrollado para el **Grupo 02** siguiendo las especificaciones de `ejercicio.md` (Anexos A, B, C, E y H) y `design_doc.md`.
+Aplicación interactiva en **Streamlit** y proyecto integral de **Aprendizaje Supervisado (Regresión)** desarrollado para el **Grupo 09** siguiendo las especificaciones de `ejercicio.md` (Anexos A, B, C, E y H) y `design_doc.md`.
 
 El sistema estima el gasto médico anual individual facturado (`charges`, en dólares estadounidenses USD) de un beneficiario titular a partir de sus características demográficas y clínicas básicas (`age`, `sex`, `bmi`, `children`, `smoker`, `region`) conocidas en el instante previo a la suscripción de la póliza ($t = 0$).
 
@@ -96,7 +96,7 @@ El flujo experimental cumple estrictamente con todas las reglas metodológicas d
 
 ---
 
-## 📈 6. Resumen de Resultados Experimentales y Hallazgos del Grupo 02
+## 📈 6. Resumen de Resultados Experimentales y Hallazgos del Grupo 09
 
 ### Comparación de Modelos en Validación Cruzada (5 Folds en `X_train`, $n=1,070$) y Prueba Reservada ($n=268$)
 
@@ -107,7 +107,7 @@ El flujo experimental cumple estrictamente con todas las reglas metodológicas d
 | **KNeighborsRegressor (Optimizado)** | `n_neighbors=7, p=1, weights='distance'` | $3,110.73 | $227.60 | 0.7897 | $2,916.21 | $5,221.37 | 0.8244 |
 | **🏆 SVR (Optimizado — Ganador)** | `kernel='rbf', C=10000, gamma=0.1, epsilon=50.0` | **$2,424.16** | **$166.96** | **0.8240** | **$1,803.44** | **$4,832.09** | **0.8496** |
 
-### Hallazgos Específicos del Grupo 02
+### Hallazgos Específicos del Grupo 09
 
 1. **Asimetría y Valores Atípicos de `charges`:**
    - `charges` presenta un coeficiente de asimetría positivo de **`1.5159`** y curtosis de **`1.6063`**, con media (**`$13,270.42`**) muy superior a la mediana (**`$9,382.03`**).
@@ -122,8 +122,8 @@ El flujo experimental cumple estrictamente con todas las reglas metodológicas d
 ## 🧭 7. Módulos de Navegación en `app.py` (Anexo H)
 
 1. **`1. Inicio y problema`:** Etapas 1 y 2 (Contexto actuarial, pregunta predictiva, objetivos general/específicos, criterios de éxito y uso responsable).
-2. **`2. Datos y EDA`:** Etapas 3 y 5 (**Tabla T1**, **Tabla T2**, análisis de asimetría/atípicos de `charges` del Grupo 02 y 5 gráficos interpretados).
+2. **`2. Datos y EDA`:** Etapas 3 y 5 (**Tabla T1**, **Tabla T2**, análisis de asimetría/atípicos de `charges` del Grupo 09 y 5 gráficos interpretados).
 3. **`3. Variables y preparación`:** Etapas 4, 6 y 7 (Separación `X`/`y`, **Tabla T3** de partición 80/20 y **Tabla T4** del `ColumnTransformer` con demostración en vivo).
 4. **`4. Modelos y comparación`:** Etapas 8, 9, 10, 11 y 12 (Fundamentos, Pipelines reproducibles, **Tabla T5** de 5-Fold CV, **Tabla T6** de `GridSearchCV` y **Tabla T7** de decisión previa al test).
-5. **`5. Evaluación`:** Etapas 13, 14 y 16 (**Tabla T8** en test reservado, análisis Grupo 02 de MAE en fumadores vs. no fumadores y por niveles de gasto, gráficos de residuales, 8 preguntas de sustentación y conclusiones).
+5. **`5. Evaluación`:** Etapas 13, 14 y 16 (**Tabla T8** en test reservado, análisis Grupo 09 de MAE en fumadores vs. no fumadores y por niveles de gasto, gráficos de residuales, 8 preguntas de sustentación y conclusiones).
 6. **`6. Predicciones`:** Etapa 15 (Simulador interactivo con validación en `src/predict.py` y **Tabla T9** con 5 casos nuevos plausibles explicados).

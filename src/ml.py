@@ -1,5 +1,5 @@
 """
-Módulo de Machine Learning (Etapas 6 a 13) para el Grupo 02:
+Módulo de Machine Learning (Etapas 6 a 13) para el Grupo 09:
 Estimación de Gastos de Seguros Médicos (Medical Cost Personal Datasets).
 
 Implementa:
@@ -9,7 +9,7 @@ Implementa:
 - Etapa 10: Validación cruzada 5-Fold idéntica solo en train -> Tabla T5
 - Etapa 11: Optimización de hiperparámetros (GridSearchCV en KNN y SVR) solo en train -> Tabla T6
 - Etapa 12: Selección razonada del mejor modelo antes del test -> Tabla T7
-- Etapa 13 y Requisito Grupo 02: Evaluación final única en test, análisis de residuales y comparación de MAE por fumador y nivel de gasto -> Tabla T8
+- Etapa 13 y Requisito Grupo 09: Evaluación final única en test, análisis de residuales y comparación de MAE por fumador y nivel de gasto -> Tabla T8
 """
 
 from __future__ import annotations
@@ -823,7 +823,7 @@ def evaluate_final_model(
     """
     Evalúa UNA sola vez en el conjunto de prueba reservado (20%) el pipeline ganador
     previamente bloqueado en la Etapa 12, comparándolo con el Baseline (Tabla T8).
-    Además ejecuta el análisis obligatorio del Grupo 02:
+    Además ejecuta el análisis obligatorio del Grupo 09:
     - Comparación de MAE entre fumadores (smoker=='yes') y no fumadores (smoker=='no').
     - Comparación de errores por niveles de gasto (Bajo, Medio, Alto).
     - Muestra de 10 predicciones reales vs predichas y estadísticas de residuales.
@@ -945,7 +945,7 @@ def evaluate_final_model(
     }
 
     # ========================================================================
-    # REQUISITO ESPECÍFICO GRUPO 02 (Anexo B y Design Doc Sección 4):
+    # REQUISITO ESPECÍFICO GRUPO 09 (Anexo B y Design Doc Sección 4):
     # Comparación de MAE entre Fumadores vs No Fumadores (sin asumir causalidad)
     # ========================================================================
     smoker_rows = []
@@ -994,7 +994,7 @@ def evaluate_final_model(
     smoker_mae_table = pd.DataFrame(smoker_rows)
 
     # ========================================================================
-    # REQUISITO ESPECÍFICO GRUPO 02 (Sección 5 Guía):
+    # REQUISITO ESPECÍFICO GRUPO 09 (Sección 5 Guía):
     # Análisis de errores por niveles de gasto (Bajo < $5k, Medio $5k-$15k, Alto > $15k)
     # ========================================================================
     tiers = [
@@ -1309,7 +1309,7 @@ def plot_smoker_error_comparison(
     y_pred: np.ndarray,
 ) -> plt.Figure:
     """
-    Visualización específica del Grupo 02 (Anexo B):
+    Visualización específica del Grupo 09 (Anexo B):
     Comparación del Error Absoluto |y_real - y_pred| entre fumadores y no fumadores
     y por nivel de gasto real.
     """
@@ -1509,6 +1509,6 @@ if __name__ == "__main__":
     print(art["t7_decision_table"].to_string(index=False))
     print("\n--- Tabla T8: Prueba Final en Test Reservado ---")
     print(art["t8_final_test_table"].to_string(index=False))
-    print("\n--- Análisis Grupo 02: MAE por Condición de Fumador en Test ---")
+    print("\n--- Análisis Grupo 09: MAE por Condición de Fumador en Test ---")
     print(art["smoker_mae_table"].to_string(index=False))
     print(f"\nArtefacto exportado exitosamente en: {MODEL_PATH}")

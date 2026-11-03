@@ -1,6 +1,6 @@
 ---
 theme: default
-title: Estimación de Gastos de Seguros Médicos - Grupo 02
+title: Estimación de Gastos de Seguros Médicos - Grupo 09
 info: |
   Sistemas Inteligentes y Machine Learning
   Sustentación del Proyecto de Regresión Supervisada
@@ -17,7 +17,7 @@ css: ./style.css
 ### Sistema Predictivo Supervisado de Regresión sin Fuga de Información
 
 <div class="mt-8 flex justify-center gap-3">
-  <span class="badge badge-emerald">Grupo 02</span>
+  <span class="badge badge-emerald">Grupo 09</span>
   <span class="badge badge-cyan">Regresión Supervisada</span>
   <span class="badge badge-rose">SVR Optimizado</span>
   <span class="badge badge-amber">Streamlit App</span>
@@ -39,7 +39,7 @@ css: ./style.css
 </div>
 
 <div class="mt-8 text-xs text-slate-400">
-  <b>Integrantes:</b> Gerardo Matías Venegas Calizaya (Data & ML Engineer) & Equipo de Proyecto Grupo 02<br>
+  <b>Integrantes:</b> Grupo 09<br>
   <b>Curso:</b> Sistemas Inteligentes y Machine Learning | Ciclo 2026-II
 </div>
 
@@ -543,7 +543,7 @@ layout: default
 layout: default
 ---
 
-# 11. Requisito Grupo 02: Fumadores vs. No Fumadores
+# 11. Requisito Grupo 09: Fumadores vs. No Fumadores
 ### Comparación de MAE entre estratos y advertencia metodológica de no causalidad
 
 <table class="text-2xs mt-2">
@@ -702,7 +702,7 @@ class: text-center
 ---
 
 # ¡Gracias por su atención!
-### Sustentación Oral y Defensa Técnica | Grupo 02
+### Sustentación Oral y Defensa Técnica | Grupo 09
 
 <div class="flex justify-center gap-4 mt-6">
   <div class="card card-emerald w-72 text-left">

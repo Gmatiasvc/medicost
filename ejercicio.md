@@ -1,6 +1,6 @@
 # SISTEMAS INTELIGENTES Y MACHINE LEARNING | GUÍA DE TRABAJO APLICATIVO
 
-**GRUPO 02. Estimación de gastos de seguros médicos**  
+**GRUPO 09. Estimación de gastos de seguros médicos**  
 **Modalidad:** Trabajo grupal de aprendizaje supervisado – Regresión.  
 **Dataset asignado:** Medical Cost Personal Datasets  
 **Fuente Kaggle:** `https://www.kaggle.com/datasets/mirichoi0218/insurance`  

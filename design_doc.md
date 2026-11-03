@@ -1,4 +1,4 @@
-# Design Document: Estimación de Gastos de Seguros Médicos (Grupo 02)
+# Design Document: Estimación de Gastos de Seguros Médicos (Grupo 09)
 
 ## 1. Contexto y Objetivos
 Desarrollo de un sistema predictivo supervisado (Regresión) para estimar `charges` en el dataset *Medical Cost Personal Datasets* [cite: 1].
@@ -21,6 +21,6 @@ Estructura de archivos y módulos exigida [cite: 1]:
 - **Validación Cruzada:** 5 folds idénticos para comparar los 3 estimadores [cite: 1].
 - **Optimización:** `GridSearchCV` exclusivo para KNN y SVR sobre train [cite: 1].
 
-## 4. Requisitos Analíticos del Grupo 02
+## 4. Requisitos Analíticos del Grupo 09
 - Analizar la asimetría y los valores atípicos de la variable monetaria `charges` [cite: 1].
 - Comparar el MAE entre fumadores y no fumadores, estableciendo claramente que no se asume causalidad directa [cite: 1].
