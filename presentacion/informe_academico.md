@@ -10,8 +10,6 @@
 **PROYECTO:** ESTIMACIÓN DE GASTOS DE SEGUROS MÉDICOS INDIVIDUALES MEDIANTE MODELOS SUPERVISADOS DE REGRESIÓN SIN FUGA DE INFORMACIÓN  
 **GRUPO DE TRABAJO:** Grupo 02  
 **Integrantes:**  
-- Venegas Calizaya, Gerardo Matías (Coordinador / ML & Data Engineer)  
-- Equipo de Investigación y Desarrollo — Grupo 02  
 **Docente:** Mg. / Dr. Docente Titular del Curso  
 **Fecha de Entrega:** 1 de Noviembre de 2026  
 
